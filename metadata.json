@@ -1,0 +1,6 @@
+{
+  "name": "Nexus Games",
+  "description": "A high-performance unblocked games catalog with a dark gamer aesthetic.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
