@@ -5,7 +5,7 @@
     "description": "Shoot some hoops in this addictive basketball game.",
     "iframeUrl": "https://storage.googleapis.com/freezenova/all/2024/construct/311/basket-hoop/pre-gg.html",
     "category": "Sports",
-    "thumbnail": "https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=300&h=200&auto=format&fit=crop"
+    "thumbnail": "https://images.unsplash.com/photo-1519861155730-0b5fbf0dd889?q=80&w=800&auto=format&fit=crop"
   },
   {
     "id": "football-king",
@@ -13,7 +13,7 @@
     "description": "Become the ultimate football king in this exciting soccer game.",
     "iframeUrl": "https://unblocked-games.s3.amazonaws.com/games/2024/construct/226/football-king/pre.html",
     "category": "Sports",
-    "thumbnail": "https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=300&h=200&auto=format&fit=crop"
+    "thumbnail": "https://images.unsplash.com/photo-1518091043644-c1d4457512c6?q=80&w=800&auto=format&fit=crop"
   },
   {
     "id": "block-blast",
@@ -21,7 +21,7 @@
     "description": "Clear lines and score points in this challenging block puzzle game.",
     "iframeUrl": "https://d11jzht7mj96rr.cloudfront.net/games/2024/unity3/block-blast/index-gg.html",
     "category": "Puzzle",
-    "thumbnail": "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=300&h=200&auto=format&fit=crop"
+    "thumbnail": "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=800&auto=format&fit=crop"
   },
   {
     "id": "mx-offroad-master",
@@ -29,7 +29,7 @@
     "description": "Tackle steep mountain slopes and perform high-octane stunts in this thrilling downhill bike adventure.",
     "iframeUrl": "https://games.crazygames.com/en_US/mx-offroad-master/index.html?v=1.357",
     "category": "Driving",
-    "thumbnail": "https://images.unsplash.com/photo-1544177259-19dec1fc676b?q=80&w=300&h=200&auto=format&fit=crop"
+    "thumbnail": "https://images.unsplash.com/photo-1544177259-19dec1fc676b?q=80&w=800&auto=format&fit=crop"
   },
   {
     "id": "basketball-stars",
@@ -37,7 +37,7 @@
     "description": "Play as some of the most iconic basketball stars and lead your team to victory.",
     "iframeUrl": "https://basketball-stars-2019.game-files.crazygames.com/basketball-stars-2019/5/index.html",
     "category": "Sports",
-    "thumbnail": "https://images.unsplash.com/photo-1519861155730-0b5fbf0dd889?q=80&w=300&h=200&auto=format&fit=crop"
+    "thumbnail": "https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=800&auto=format&fit=crop"
   },
   {
     "id": "space-waves",
@@ -45,7 +45,7 @@
     "description": "Navigate your way through 33 challenging arcade levels avoiding walls, cogs, and thorns.",
     "iframeUrl": "https://games.crazygames.com/en_US/space-waves/index.html?v=1.357",
     "category": "Arcade",
-    "thumbnail": "https://images.unsplash.com/photo-1614728263952-84ea256f9679?q=80&w=300&h=200&auto=format&fit=crop"
+    "thumbnail": "https://images.unsplash.com/photo-1614728263952-84ea256f9679?q=80&w=800&auto=format&fit=crop"
   },
   {
     "id": "bloxd-io",
@@ -53,7 +53,7 @@
     "description": "An IO adventure game with Minecraft-style visuals where you can navigate obstacle courses, gather resources, craft tools, battle other players, and much more.",
     "iframeUrl": "https://games.crazygames.com/en_US/bloxdhop-io/index.html?v=1.357",
     "category": "IO Games",
-    "thumbnail": "https://images.unsplash.com/photo-1628527304948-06157ee3c8a6?q=80&w=300&h=200&auto=format&fit=crop"
+    "thumbnail": "https://images.unsplash.com/photo-1628527304948-06157ee3c8a6?q=80&w=800&auto=format&fit=crop"
   },
   {
     "id": "rocket-goal",
@@ -61,7 +61,7 @@
     "description": "Experience high-speed vehicular soccer in this action-packed Rocket League style IO game.",
     "iframeUrl": "https://rocketgoal.io/?sdk=crazy",
     "category": "IO Games",
-    "thumbnail": "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?q=80&w=300&h=200&auto=format&fit=crop"
+    "thumbnail": "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?q=80&w=800&auto=format&fit=crop"
   },
   {
     "id": "satisfying-ball-clicker",
@@ -69,22 +69,30 @@
     "description": "Experience the ultimate satisfaction in this addictive ball clicking idle game.",
     "iframeUrl": "https://games.crazygames.com/en_US/satisfying-ball-clicker/index.html?v=1.357",
     "category": "Arcade",
-    "thumbnail": "https://images.unsplash.com/photo-1557683316-973673baf926?q=80&w=300&h=200&auto=format&fit=crop"
+    "thumbnail": "https://images.unsplash.com/photo-1557683316-973673baf926?q=80&w=800&auto=format&fit=crop"
   },
   {
-    "id": "slope",
-    "title": "Slope",
-    "description": "Drive a ball down a series of slopes and obstacles in this high-speed endless runner.",
-    "iframeUrl": "https://games.crazygames.com/en_US/slope/index.html",
-    "category": "Arcade",
-    "thumbnail": "https://images.unsplash.com/photo-1614728263952-84ea256f9679?q=80&w=300&h=200&auto=format&fit=crop"
+    "id": "dig-out-of-prison",
+    "title": "Dig out of Prison",
+    "description": "Determine to plot your escape in this casual puzzle game. Dig tunnels, trade with inmates, and stay under the radar.",
+    "iframeUrl": "https://games.crazygames.com/en_US/dig-out-of-prison/index.html?v=1.357",
+    "category": "Puzzle",
+    "thumbnail": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?q=80&w=800&auto=format&fit=crop"
   },
   {
-    "id": "tunnel-rush",
-    "title": "Tunnel Rush",
-    "description": "Navigate through a colorful 3D tunnel at high speeds while avoiding obstacles.",
-    "iframeUrl": "https://games.crazygames.com/en_US/tunnel-rush/index.html",
+    "id": "escape-waves",
+    "title": "Escape Waves",
+    "description": "Ride the waves and dodge obstacles in this high-speed surfing challenge.",
+    "iframeUrl": "https://escapewaves.io/?crazygames=true",
     "category": "Arcade",
-    "thumbnail": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=300&h=200&auto=format&fit=crop"
+    "thumbnail": "https://images.unsplash.com/photo-1502680390469-be75c86b636f?q=80&w=800&auto=format&fit=crop"
+  },
+  {
+    "id": "atari-breakout",
+    "title": "Atari Breakout",
+    "description": "The classic arcade game where you clear blocks with a ball and paddle.",
+    "iframeUrl": "https://1974472431-atari-embeds.googleusercontent.com/embeds/16cb204cf3a9d4d223a0a3fd8b0eec5d/inner-frame-minified.html?jsh=m%3B%2F_%2Fscs%2Fabc-static%2F_%2Fjs%2Fk%3Dgapi.lb.en.ch0Jz-JlMrQ.O%2Fd%3D1%2Frs%3DAHpOoo_YD4KoV8fTh_kLhktsiThAm3yJ5A%2Fm%3D__features__",
+    "category": "Arcade",
+    "thumbnail": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800&auto=format&fit=crop"
   }
 ]

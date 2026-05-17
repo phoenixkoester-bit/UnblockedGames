@@ -169,6 +169,7 @@ function renderRecentSection() {
                 <img 
                     src="${game.thumbnail}" 
                     alt="${game.title}"
+                    referrerpolicy="no-referrer"
                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
@@ -200,6 +201,7 @@ function renderTopPicksSection() {
                 <img 
                     src="${game.thumbnail}" 
                     alt="${game.title}"
+                    referrerpolicy="no-referrer"
                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
@@ -241,6 +243,7 @@ function renderCategoryRows() {
                                 <img 
                                     src="${game.thumbnail}" 
                                     alt="${game.title}"
+                                    referrerpolicy="no-referrer"
                                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                                 />
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
@@ -320,6 +323,7 @@ function renderGames() {
                 <img 
                     src="${game.thumbnail}" 
                     alt="${game.title}"
+                    referrerpolicy="no-referrer"
                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div class="absolute inset-0 bg-gradient-to-t from-brand-bg to-transparent opacity-60"></div>
