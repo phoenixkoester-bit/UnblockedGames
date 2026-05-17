@@ -46,3 +46,70 @@
     border-color: var(--color-brand-primary);
     transform: scale(1.05);
 }
+
+.sidebar-nav-item.active {
+    background-color: rgba(0, 255, 65, 0.1);
+    color: var(--color-brand-primary);
+    font-weight: 500;
+}
+
+.sidebar-nav-item:hover:not(.active) {
+    background-color: var(--color-brand-card);
+    color: white;
+}
+
+aside::-webkit-scrollbar {
+    width: 4px;
+}
+
+aside::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+aside::-webkit-scrollbar-thumb {
+    background: var(--color-brand-border);
+    border-radius: 10px;
+}
+
+.game-grid-row {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.game-grid-row::-webkit-scrollbar {
+    display: none;
+}
+
+.game-grid-row > div {
+    min-width: 200px;
+    max-width: 240px;
+    flex-shrink: 0;
+}
+
+.game-grid-standard {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+    .game-grid-standard {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    .game-grid-standard {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1280px) {
+    .game-grid-standard {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
