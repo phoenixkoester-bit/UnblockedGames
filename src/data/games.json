@@ -8,36 +8,12 @@
     "thumbnail": "https://images.unsplash.com/photo-1519861155730-0b5fbf0dd889?q=80&w=800&auto=format&fit=crop"
   },
   {
-    "id": "football-king",
-    "title": "Football King",
-    "description": "Become the ultimate football king in this exciting soccer game.",
-    "iframeUrl": "https://unblocked-games.s3.amazonaws.com/games/2024/construct/226/football-king/pre.html",
-    "category": "Sports",
-    "thumbnail": "https://images.unsplash.com/photo-1518091043644-c1d4457512c6?q=80&w=800&auto=format&fit=crop"
-  },
-  {
-    "id": "block-blast",
-    "title": "Block Blast",
-    "description": "Clear lines and score points in this challenging block puzzle game.",
-    "iframeUrl": "https://d11jzht7mj96rr.cloudfront.net/games/2024/unity3/block-blast/index-gg.html",
-    "category": "Puzzle",
-    "thumbnail": "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=800&auto=format&fit=crop"
-  },
-  {
     "id": "mx-offroad-master",
     "title": "MX Offroad Master",
     "description": "Tackle steep mountain slopes and perform high-octane stunts in this thrilling downhill bike adventure.",
     "iframeUrl": "https://games.crazygames.com/en_US/mx-offroad-master/index.html?v=1.357",
     "category": "Driving",
-    "thumbnail": "https://images.unsplash.com/photo-1544177259-19dec1fc676b?q=80&w=800&auto=format&fit=crop"
-  },
-  {
-    "id": "basketball-stars",
-    "title": "Basketball Stars",
-    "description": "Play as some of the most iconic basketball stars and lead your team to victory.",
-    "iframeUrl": "https://basketball-stars-2019.game-files.crazygames.com/basketball-stars-2019/5/index.html",
-    "category": "Sports",
-    "thumbnail": "https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=800&auto=format&fit=crop"
+    "thumbnail": "https://images.unsplash.com/photo-1444491741275-3747c53c99b4?q=80&w=800&auto=format&fit=crop"
   },
   {
     "id": "space-waves",
@@ -46,14 +22,6 @@
     "iframeUrl": "https://games.crazygames.com/en_US/space-waves/index.html?v=1.357",
     "category": "Arcade",
     "thumbnail": "https://images.unsplash.com/photo-1614728263952-84ea256f9679?q=80&w=800&auto=format&fit=crop"
-  },
-  {
-    "id": "bloxd-io",
-    "title": "Bloxd.io",
-    "description": "An IO adventure game with Minecraft-style visuals where you can navigate obstacle courses, gather resources, craft tools, battle other players, and much more.",
-    "iframeUrl": "https://games.crazygames.com/en_US/bloxdhop-io/index.html?v=1.357",
-    "category": "IO Games",
-    "thumbnail": "https://images.unsplash.com/photo-1628527304948-06157ee3c8a6?q=80&w=800&auto=format&fit=crop"
   },
   {
     "id": "rocket-goal",
@@ -72,14 +40,6 @@
     "thumbnail": "https://images.unsplash.com/photo-1557683316-973673baf926?q=80&w=800&auto=format&fit=crop"
   },
   {
-    "id": "dig-out-of-prison",
-    "title": "Dig out of Prison",
-    "description": "Determine to plot your escape in this casual puzzle game. Dig tunnels, trade with inmates, and stay under the radar.",
-    "iframeUrl": "https://games.crazygames.com/en_US/dig-out-of-prison/index.html?v=1.357",
-    "category": "Puzzle",
-    "thumbnail": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?q=80&w=800&auto=format&fit=crop"
-  },
-  {
     "id": "escape-waves",
     "title": "Escape Waves",
     "description": "Ride the waves and dodge obstacles in this high-speed surfing challenge.",
@@ -88,11 +48,11 @@
     "thumbnail": "https://images.unsplash.com/photo-1502680390469-be75c86b636f?q=80&w=800&auto=format&fit=crop"
   },
   {
-    "id": "atari-breakout",
-    "title": "Atari Breakout",
-    "description": "The classic arcade game where you clear blocks with a ball and paddle.",
-    "iframeUrl": "https://1974472431-atari-embeds.googleusercontent.com/embeds/16cb204cf3a9d4d223a0a3fd8b0eec5d/inner-frame-minified.html?jsh=m%3B%2F_%2Fscs%2Fabc-static%2F_%2Fjs%2Fk%3Dgapi.lb.en.ch0Jz-JlMrQ.O%2Fd%3D1%2Frs%3DAHpOoo_YD4KoV8fTh_kLhktsiThAm3yJ5A%2Fm%3D__features__",
-    "category": "Arcade",
-    "thumbnail": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800&auto=format&fit=crop"
+    "id": "layers-roll",
+    "title": "Layers Roll",
+    "description": "Roll over matching colored strips to build your wheel, avoid obstacles, and achieve your highest score in this fun casual adventure.",
+    "iframeUrl": "https://games.crazygames.com/en_US/layers-roll/index.html?v=1.357",
+    "category": "Casual",
+    "thumbnail": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop"
   }
 ]

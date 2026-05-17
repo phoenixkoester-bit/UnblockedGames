@@ -166,7 +166,15 @@
                     </div>
 
                     <div class="iframe-container shadow-2xl shadow-brand-primary/5">
-                        <iframe id="game-iframe" src="" title="Game Player" allowfullscreen loading="lazy"></iframe>
+                        <iframe 
+                            id="game-iframe" 
+                            src="" 
+                            title="Game Player" 
+                            allowfullscreen 
+                            loading="lazy"
+                            allow="accelerometer; gyroscope; autoplay; payment; fullscreen; microphone; clipboard-read; clipboard-write"
+                            sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-presentation allow-scripts allow-same-origin allow-downloads allow-popups-to-escape-sandbox"
+                        ></iframe>
                     </div>
 
                     <div class="flex flex-col lg:flex-row gap-8 py-4 border-t border-brand-border">
