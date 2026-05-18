@@ -98,5 +98,15 @@
     "thumbnail": "https://images.unsplash.com/photo-1614850523296-d8c1af93d400?q=80&w=800&auto=format&fit=crop",
     "rating": 4.9,
     "ratingCount": 542
+  },
+  {
+    "id": "snow-rider-3d",
+    "title": "Snow Rider 3D",
+    "description": "Experience the thrill of downhill sledding in this fast-paced 3D racer. Dodge obstacles, collect gifts, and see how far you can go!",
+    "iframeUrl": "https://www.hoodamath.com/mobile/games/snow-rider-3d/game.html?nocheckorient=1",
+    "category": "Driving",
+    "thumbnail": "https://images.unsplash.com/photo-1551698618-1fed5d965596?q=80&w=800&auto=format&fit=crop",
+    "rating": 4.5,
+    "ratingCount": 185
   }
 ]
