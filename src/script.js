@@ -6,6 +6,7 @@ let searchQuery = '';
 let currentView = 'home'; // 'home', 'recent'
 let isGridView = false; // Toggle for home featured view
 let recentlyPlayedIds = JSON.parse(localStorage.getItem('recentlyPlayed') || '[]');
+let userRatings = JSON.parse(localStorage.getItem('userRatings') || '{}');
 
 // DOM Elements
 const lobbyEl = document.getElementById('lobby');
@@ -36,6 +37,8 @@ const gameCategoryTag = document.getElementById('game-category-tag');
 const gameDescription = document.getElementById('game-description');
 const externalLink = document.getElementById('external-link');
 const fullscreenBtn = document.getElementById('fullscreen-btn');
+const ratingStarsContainer = document.getElementById('rating-stars');
+const averageRatingText = document.getElementById('average-rating');
 
 // Initialize the app
 async function init() {
@@ -160,7 +163,9 @@ function renderRecentSection() {
     continuePlayingSection.classList.remove('hidden');
     const recentGames = recentlyPlayedIds.map(id => allGames.find(g => g.id === id)).filter(Boolean);
 
-    continuePlayingGrid.innerHTML = recentGames.map(game => `
+    continuePlayingGrid.innerHTML = recentGames.map(game => {
+        const ratingInfo = calculateAverageRating(game.id);
+        return `
         <div 
             class="group min-w-[200px] max-w-[240px] bg-brand-card border border-brand-border rounded-xl overflow-hidden cursor-pointer hover:border-brand-primary/50 transition-all shrink-0"
             onclick="playGame('${game.id}')"
@@ -173,12 +178,16 @@ function renderRecentSection() {
                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                <div class="absolute bottom-2 left-3">
+                <div class="absolute bottom-2 left-3 flex items-center justify-between w-[calc(100%-1.5rem)]">
                     <h4 class="font-bold text-xs truncate group-hover:text-brand-primary transition-colors">${game.title}</h4>
+                    <div class="flex items-center gap-1 text-[10px] text-brand-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" class="w-2.5 h-2.5"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <span>${ratingInfo.average}</span>
+                    </div>
                 </div>
             </div>
         </div>
-    `).join('');
+    `;}).join('');
 }
 
 function renderTopPicksSection() {
@@ -192,7 +201,9 @@ function renderTopPicksSection() {
     const shuffled = [...allGames].sort(() => 0.5 - Math.random());
     const topPicks = shuffled.slice(0, 6); 
 
-    topPicksGrid.innerHTML = topPicks.map(game => `
+    topPicksGrid.innerHTML = topPicks.map(game => {
+        const ratingInfo = calculateAverageRating(game.id);
+        return `
         <div 
             class="group bg-brand-card border border-brand-border rounded-xl overflow-hidden cursor-pointer hover:border-brand-primary/50 transition-all"
             onclick="playGame('${game.id}')"
@@ -205,13 +216,19 @@ function renderTopPicksSection() {
                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                <div class="absolute bottom-2 left-3">
-                    <h4 class="font-bold text-xs truncate group-hover:text-brand-primary transition-colors">${game.title}</h4>
+                <div class="absolute bottom-2 left-3 right-3">
+                    <div class="flex items-center justify-between">
+                        <h4 class="font-bold text-xs truncate group-hover:text-brand-primary transition-colors">${game.title}</h4>
+                        <div class="flex items-center gap-1 text-[10px] text-brand-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" class="w-2.5 h-2.5"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <span>${ratingInfo.average}</span>
+                        </div>
+                    </div>
                     <p class="text-[10px] text-gray-500 font-mono uppercase tracking-wider">${game.category}</p>
                 </div>
             </div>
         </div>
-    `).join('');
+    `;}).join('');
 }
 
 function renderCategoryRows() {
@@ -234,7 +251,9 @@ function renderCategoryRows() {
                     </button>
                 </div>
                 <div class="game-grid-row">
-                    ${catGames.map(game => `
+                    ${catGames.map(game => {
+                        const ratingInfo = calculateAverageRating(game.id);
+                        return `
                         <div 
                             class="group bg-brand-card border border-brand-border rounded-xl overflow-hidden cursor-pointer hover:border-brand-primary/50 transition-all"
                             onclick="playGame('${game.id}')"
@@ -247,12 +266,16 @@ function renderCategoryRows() {
                                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                                 />
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                                <div class="absolute bottom-2 left-3">
+                                <div class="absolute bottom-2 left-3 right-3 flex items-center justify-between">
                                     <h4 class="font-bold text-xs truncate group-hover:text-brand-primary transition-colors">${game.title}</h4>
+                                    <div class="flex items-center gap-1 text-[10px] text-brand-primary">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" class="w-2.5 h-2.5"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                        <span>${ratingInfo.average}</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    `).join('')}
+                    `;}).join('')}
                 </div>
             </section>
         `;
@@ -314,7 +337,9 @@ function renderGames() {
     // Set Layout Class
     gameGridEl.className = (isFeaturedView && !isGridView) ? 'game-grid-row' : 'game-grid-standard';
 
-    gameGridEl.innerHTML = displayGames.map(game => `
+    gameGridEl.innerHTML = displayGames.map(game => {
+        const ratingInfo = calculateAverageRating(game.id);
+        return `
         <div 
             class="group bg-brand-card border border-brand-border rounded-xl overflow-hidden cursor-pointer game-card-transition hover:border-brand-primary/50 game-card"
             onclick="playGame('${game.id}')"
@@ -332,6 +357,10 @@ function renderGames() {
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="m7 4 12 8-12 8V4z"></path></svg>
                     </div>
                 </div>
+                <div class="absolute top-2 right-2 flex items-center gap-1 bg-black/60 backdrop-blur-sm px-1.5 py-0.5 rounded text-[10px] text-brand-primary font-bold">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" class="inline-block"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    ${ratingInfo.average}
+                </div>
             </div>
             <div class="p-4 border-t border-brand-border">
                 <div class="flex items-center justify-between mb-1">
@@ -343,7 +372,7 @@ function renderGames() {
                 <p class="text-gray-400 text-sm line-clamp-2 leading-relaxed">${game.description}</p>
             </div>
         </div>
-    `).join('');
+    `;}).join('');
 
     noResultsEl.classList.toggle('hidden', filteredGames.length > 0);
 }
@@ -384,6 +413,9 @@ function playGame(id) {
     `;
     externalLink.href = game.iframeUrl;
 
+    // Render Player Rating
+    updatePlayerRatingUI(id);
+
     // Switch views
     lobbyEl.classList.add('hidden');
     playerEl.classList.remove('hidden');
@@ -395,6 +427,63 @@ function recordPlayed(id) {
     localStorage.setItem('recentlyPlayed', JSON.stringify(recentlyPlayedIds));
     renderRecentSection();
 }
+
+function calculateAverageRating(id) {
+    const game = allGames.find(g => g.id === id);
+    if (!game) return { average: 0, count: 0 };
+
+    const baseRating = game.rating || 0;
+    const baseCount = game.ratingCount || 0;
+    const userRating = userRatings[id];
+
+    if (userRating) {
+        const totalPoints = (baseRating * baseCount) + userRating;
+        const totalCount = baseCount + 1;
+        return {
+            average: (totalPoints / totalCount).toFixed(1),
+            count: totalCount
+        };
+    }
+
+    return {
+        average: baseRating.toFixed(1),
+        count: baseCount
+    };
+}
+
+function updatePlayerRatingUI(id) {
+    const ratingInfo = calculateAverageRating(id);
+    const userRating = userRatings[id] || 0;
+
+    averageRatingText.innerHTML = `
+        <span class="text-brand-primary font-bold">${ratingInfo.average}</span>
+        <span class="text-gray-500">/ 5 (${ratingInfo.count} reviews)</span>
+    `;
+
+    ratingStarsContainer.innerHTML = [1, 2, 3, 4, 5].map(star => {
+        const isFilled = star <= userRating;
+        return `
+            <button 
+                onclick="rateGame('${id}', ${star})"
+                class="transition-transform hover:scale-125 focus:outline-none"
+                title="Rate ${star} stars"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="${isFilled ? '#00ffa3' : 'none'}" stroke="${isFilled ? '#00ffa3' : 'currentColor'}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 ${isFilled ? 'drop-shadow-[0_0_8px_rgba(0,255,163,0.5)]' : 'text-gray-600 hover:text-brand-primary'}">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+            </button>
+        `;
+    }).join('');
+}
+
+function rateGame(id, rating) {
+    userRatings[id] = rating;
+    localStorage.setItem('userRatings', JSON.stringify(userRatings));
+    updatePlayerRatingUI(id);
+    renderGames(); // Refresh cards to show new average
+}
+
+window.rateGame = rateGame;
 
 function setupEventListeners() {
     searchInput.addEventListener('input', (e) => {

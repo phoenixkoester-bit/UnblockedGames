@@ -5,7 +5,9 @@
     "description": "Shoot some hoops in this addictive basketball game.",
     "iframeUrl": "https://storage.googleapis.com/freezenova/all/2024/construct/311/basket-hoop/pre-gg.html",
     "category": "Sports",
-    "thumbnail": "https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=800&auto=format&fit=crop"
+    "thumbnail": "https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=800&auto=format&fit=crop",
+    "rating": 4.5,
+    "ratingCount": 128
   },
   {
     "id": "mx-offroad-master",
@@ -13,7 +15,9 @@
     "description": "Tackle steep mountain slopes and perform high-octane stunts in this thrilling downhill bike adventure.",
     "iframeUrl": "https://games.crazygames.com/en_US/mx-offroad-master/index.html?v=1.357",
     "category": "Driving",
-    "thumbnail": "https://images.unsplash.com/photo-1444491741275-3747c53c99b4?q=80&w=800&auto=format&fit=crop"
+    "thumbnail": "https://images.unsplash.com/photo-1444491741275-3747c53c99b4?q=80&w=800&auto=format&fit=crop",
+    "rating": 4.2,
+    "ratingCount": 85
   },
   {
     "id": "space-waves",
@@ -21,7 +25,9 @@
     "description": "Navigate your way through 33 challenging arcade levels avoiding walls, cogs, and thorns.",
     "iframeUrl": "https://games.crazygames.com/en_US/space-waves/index.html?v=1.357",
     "category": "Arcade",
-    "thumbnail": "https://images.unsplash.com/photo-1614728263952-84ea256f9679?q=80&w=800&auto=format&fit=crop"
+    "thumbnail": "https://images.unsplash.com/photo-1614728263952-84ea256f9679?q=80&w=800&auto=format&fit=crop",
+    "rating": 4.7,
+    "ratingCount": 210
   },
   {
     "id": "rocket-goal",
@@ -29,7 +35,9 @@
     "description": "Experience high-speed vehicular soccer in this action-packed Rocket League style IO game.",
     "iframeUrl": "https://rocketgoal.io/?sdk=crazy",
     "category": "IO Games",
-    "thumbnail": "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?q=80&w=800&auto=format&fit=crop"
+    "thumbnail": "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?q=80&w=800&auto=format&fit=crop",
+    "rating": 4.4,
+    "ratingCount": 156
   },
   {
     "id": "satisfying-ball-clicker",
@@ -37,7 +45,9 @@
     "description": "Experience the ultimate satisfaction in this addictive ball clicking idle game.",
     "iframeUrl": "https://games.crazygames.com/en_US/satisfying-ball-clicker/index.html?v=1.357",
     "category": "Arcade",
-    "thumbnail": "https://images.unsplash.com/photo-1557683316-973673baf926?q=80&w=800&auto=format&fit=crop"
+    "thumbnail": "https://images.unsplash.com/photo-1557683316-973673baf926?q=80&w=800&auto=format&fit=crop",
+    "rating": 4.1,
+    "ratingCount": 64
   },
   {
     "id": "escape-waves",
@@ -45,7 +55,9 @@
     "description": "Ride the waves and dodge obstacles in this high-speed surfing challenge.",
     "iframeUrl": "https://escapewaves.io/?crazygames=true",
     "category": "Arcade",
-    "thumbnail": "https://images.unsplash.com/photo-1502680390469-be75c86b636f?q=80&w=800&auto=format&fit=crop"
+    "thumbnail": "https://images.unsplash.com/photo-1502680390469-be75c86b636f?q=80&w=800&auto=format&fit=crop",
+    "rating": 4.3,
+    "ratingCount": 92
   },
   {
     "id": "layers-roll",
@@ -53,7 +65,9 @@
     "description": "Roll over matching colored strips to build your wheel, avoid obstacles, and achieve your highest score in this fun casual adventure.",
     "iframeUrl": "https://games.crazygames.com/en_US/layers-roll/index.html?v=1.357",
     "category": "Casual",
-    "thumbnail": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop"
+    "thumbnail": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop",
+    "rating": 4.6,
+    "ratingCount": 178
   },
   {
     "id": "bridge-race",
@@ -61,7 +75,9 @@
     "description": "Collect blocks of your color, build bridges, and compete against others to reach the finish line in this addictive racing game.",
     "iframeUrl": "https://games.crazygames.com/en_US/bridge-race/index.html?v=1.357",
     "category": "Casual",
-    "thumbnail": "https://images.unsplash.com/photo-1587654780291-39c9404d746b?q=80&w=800&auto=format&fit=crop"
+    "thumbnail": "https://images.unsplash.com/photo-1587654780291-39c9404d746b?q=80&w=800&auto=format&fit=crop",
+    "rating": 4.0,
+    "ratingCount": 112
   },
   {
     "id": "doodle-road",
@@ -69,6 +85,8 @@
     "description": "An imaginative 2D casual game where you draw paths to guide a car to the finish line, testing your creativity and strategic thinking.",
     "iframeUrl": "https://games.crazygames.com/en_US/doodle-road/index.html?v=1.357",
     "category": "Casual",
-    "thumbnail": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=800&auto=format&fit=crop"
+    "thumbnail": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=800&auto=format&fit=crop",
+    "rating": 4.8,
+    "ratingCount": 245
   }
 ]
