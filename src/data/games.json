@@ -100,13 +100,23 @@
     "ratingCount": 542
   },
   {
-    "id": "snow-rider-3d",
-    "title": "Snow Rider 3D",
-    "description": "Experience the thrill of downhill sledding in this fast-paced 3D racer. Dodge obstacles, collect gifts, and see how far you can go!",
-    "iframeUrl": "https://www.hoodamath.com/mobile/games/snow-rider-3d/game.html?nocheckorient=1",
+    "id": "ovo",
+    "title": "OvO",
+    "description": "A fast-paced platformer where you control a simple stickman through various obstacle courses. Master movement, jumping, and sliding to reach the goal!",
+    "iframeUrl": "https://games.crazygames.com/en_US/ovo/index.html",
+    "category": "Arcade",
+    "thumbnail": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800&auto=format&fit=crop",
+    "rating": 4.8,
+    "ratingCount": 1205
+  },
+  {
+    "id": "drift-boss",
+    "title": "Drift Boss",
+    "description": "Master the art of drifting in this addictive arcade game. Time your turns perfectly to stay on the track and collect coins!",
+    "iframeUrl": "https://games.crazygames.com/en_US/drift-boss/index.html",
     "category": "Driving",
-    "thumbnail": "https://images.unsplash.com/photo-1551698618-1fed5d965596?q=80&w=800&auto=format&fit=crop",
-    "rating": 4.5,
-    "ratingCount": 185
+    "thumbnail": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800&auto=format&fit=crop",
+    "rating": 4.7,
+    "ratingCount": 650
   }
 ]
