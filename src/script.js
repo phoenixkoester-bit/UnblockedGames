@@ -12,7 +12,6 @@ let userRatings = JSON.parse(localStorage.getItem('userRatings') || '{}');
 const lobbyEl = document.getElementById('lobby');
 const playerEl = document.getElementById('player');
 const gameGridEl = document.getElementById('game-grid');
-const categoriesEl = document.getElementById('categories');
 const sidebarCategoriesEl = document.getElementById('sidebar-categories');
 const searchInput = document.getElementById('search-input');
 const noResultsEl = document.getElementById('no-results');
@@ -23,7 +22,6 @@ const navRecent = document.getElementById('nav-recent');
 const activeViewTitle = document.getElementById('active-view-title');
 const activeViewDesc = document.getElementById('active-view-desc');
 const viewAllBtn = document.getElementById('view-all-btn');
-const categoryRowsContainer = document.getElementById('category-rows-container');
 const heroSection = document.getElementById('hero-section');
 const continuePlayingSection = document.getElementById('continue-playing-section');
 const continuePlayingGrid = document.getElementById('continue-playing-grid');
@@ -56,68 +54,25 @@ async function init() {
 }
 
 function renderCategories() {
-    const categories = [...new Set(allGames.map(g => g.category))];
-    
-    // Render Mobile Horizontal Categories
-    const mobileCats = ['All Games', ...categories];
-    categoriesEl.innerHTML = mobileCats.map(cat => {
-        const isAll = cat === 'All Games';
-        const isActive = activeCategory === cat || (isAll && activeCategory === null && !searchQuery && currentView === 'home');
+    // Render Sidebar Games (Alphabetical)
+    const sortedGames = [...allGames].sort((a, b) => a.title.localeCompare(b.title));
+    sidebarCategoriesEl.innerHTML = sortedGames.map(game => {
         return `
             <button 
-                data-category="${isAll ? '' : cat}"
-                class="category-btn px-4 py-1.5 rounded-full text-xs font-mono uppercase tracking-wider border transition-all whitespace-nowrap ${
-                    isActive 
-                    ? 'bg-brand-primary text-black border-brand-primary scale-105' 
-                    : 'border-brand-border text-gray-400 hover:border-gray-600'
-                }"
+                data-game-id="${game.id}"
+                class="sidebar-game-item w-full flex items-center gap-3 px-3 py-1.5 rounded-lg text-xs transition-colors text-gray-400 hover:text-brand-primary hover:bg-brand-card/50 group"
+                title="${game.title}"
             >
-                ${cat}
+                <div class="w-1 h-1 rounded-full bg-gray-700 group-hover:bg-brand-primary transition-colors"></div>
+                <span class="truncate">${game.title}</span>
             </button>
         `;
     }).join('');
 
-    // Render Sidebar Categories
-    sidebarCategoriesEl.innerHTML = categories.map(cat => {
-        const isActive = activeCategory === cat;
-        return `
-            <button 
-                data-category="${cat}"
-                class="sidebar-nav-item w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-colors ${
-                    isActive 
-                    ? 'active text-brand-primary' 
-                    : 'text-gray-400'
-                }"
-            >
-                <div class="w-1.5 h-1.5 rounded-full ${isActive ? 'bg-brand-primary' : 'bg-gray-700'}"></div>
-                ${cat}
-            </button>
-        `;
-    }).join('');
-
-    // Add click listeners to sidebar buttons
-    sidebarCategoriesEl.querySelectorAll('.sidebar-nav-item').forEach(btn => {
+    // Add click listeners to sidebar game buttons
+    sidebarCategoriesEl.querySelectorAll('.sidebar-game-item').forEach(btn => {
         btn.addEventListener('click', () => {
-            currentView = 'home';
-            activeCategory = btn.dataset.category || null;
-            searchQuery = '';
-            searchInput.value = '';
-            updateViewMeta();
-            applyFilters();
-            renderCategories();
-            updateActiveNav();
-        });
-    });
-
-    // Mobile click listeners
-    categoriesEl.querySelectorAll('.category-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            currentView = 'home';
-            activeCategory = btn.dataset.category || null;
-            updateViewMeta();
-            applyFilters();
-            renderCategories();
-            updateActiveNav();
+            playGame(btn.dataset.gameId);
         });
     });
 }
@@ -140,16 +95,22 @@ function updateActiveNav() {
 
 function updateViewMeta() {
     if (searchQuery) {
-        activeViewTitle.textContent = "Search Results";
+        activeViewTitle.innerHTML = `
+            <div class="w-1.5 h-6 bg-brand-primary rounded-full"></div>
+            Search Results
+        `;
         activeViewDesc.textContent = `Showing games matching "${searchQuery}"`;
     } else if (currentView === 'recent') {
-        activeViewTitle.textContent = "Recently Played";
+        activeViewTitle.innerHTML = `
+            <div class="w-1.5 h-6 bg-brand-primary rounded-full"></div>
+            Recently Played
+        `;
         activeViewDesc.textContent = "Jump back into your favorites.";
-    } else if (activeCategory) {
-        activeViewTitle.textContent = `${activeCategory} Games`;
-        activeViewDesc.textContent = `The best ${activeCategory.toLowerCase()} unblocked games.`;
     } else {
-        activeViewTitle.textContent = "Featured games";
+        activeViewTitle.innerHTML = `
+            <div class="w-1.5 h-6 bg-brand-primary rounded-full"></div>
+            Featured games
+        `;
         activeViewDesc.textContent = "Discover your next favorite unblocked experience.";
     }
 }
@@ -178,7 +139,7 @@ function renderRecentSection() {
                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                <div class="absolute bottom-2 left-3 flex items-center justify-between w-[calc(100%-1.5rem)]">
+                <div class="absolute bottom-2 left-3 right-3 flex items-center justify-between">
                     <h4 class="font-bold text-xs truncate group-hover:text-brand-primary transition-colors">${game.title}</h4>
                     <div class="flex items-center gap-1 text-[10px] text-brand-primary">
                         <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" class="w-2.5 h-2.5"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
@@ -205,7 +166,7 @@ function renderTopPicksSection() {
         const ratingInfo = calculateAverageRating(game.id);
         return `
         <div 
-            class="group bg-brand-card border border-brand-border rounded-xl overflow-hidden cursor-pointer hover:border-brand-primary/50 transition-all"
+            class="group min-w-[200px] max-w-[240px] bg-brand-card border border-brand-border rounded-xl overflow-hidden cursor-pointer hover:border-brand-primary/50 transition-all shrink-0"
             onclick="playGame('${game.id}')"
         >
             <div class="aspect-video relative overflow-hidden">
@@ -231,111 +192,23 @@ function renderTopPicksSection() {
     `;}).join('');
 }
 
-function renderCategoryRows() {
-    const categories = [...new Set(allGames.map(g => g.category))];
-    
-    categoryRowsContainer.innerHTML = categories.map(cat => {
-        const catGames = allGames.filter(g => g.category === cat);
-        return `
-            <section>
-                <div class="flex items-center justify-between mb-6">
-                    <h3 class="text-xl font-bold flex items-center gap-2">
-                        <div class="w-2 h-6 bg-brand-primary"></div>
-                        ${cat}
-                    </h3>
-                    <button 
-                        onclick="goToCategory('${cat}')"
-                        class="text-[10px] font-mono uppercase tracking-widest text-gray-500 hover:text-brand-primary transition-colors"
-                    >
-                        See All
-                    </button>
-                </div>
-                <div class="game-grid-row">
-                    ${catGames.map(game => {
-                        const ratingInfo = calculateAverageRating(game.id);
-                        return `
-                        <div 
-                            class="group bg-brand-card border border-brand-border rounded-xl overflow-hidden cursor-pointer hover:border-brand-primary/50 transition-all"
-                            onclick="playGame('${game.id}')"
-                        >
-                            <div class="aspect-video relative overflow-hidden">
-                                <img 
-                                    src="${game.thumbnail}" 
-                                    alt="${game.title}"
-                                    referrerpolicy="no-referrer"
-                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                                />
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                                <div class="absolute bottom-2 left-3 right-3 flex items-center justify-between">
-                                    <h4 class="font-bold text-xs truncate group-hover:text-brand-primary transition-colors">${game.title}</h4>
-                                    <div class="flex items-center gap-1 text-[10px] text-brand-primary">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" class="w-2.5 h-2.5"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                        <span>${ratingInfo.average}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    `;}).join('')}
-                </div>
-            </section>
-        `;
-    }).join('');
-}
-
-function goToCategory(cat) {
-    currentView = 'home';
-    activeCategory = cat;
-    searchQuery = '';
-    searchInput.value = '';
-    updateViewMeta();
-    applyFilters();
-    renderCategories();
-    updateActiveNav();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-window.goToCategory = goToCategory;
-
 function renderGames() {
     renderRecentSection();
     renderTopPicksSection();
-
-    const isHomeDefault = currentView === 'home' && !activeCategory && !searchQuery;
-
-    if (isHomeDefault && !isGridView) {
-        categoryRowsContainer.classList.remove('hidden');
-        renderCategoryRows();
-    } else {
-        categoryRowsContainer.classList.add('hidden');
-    }
 
     heroSection.classList.remove('hidden');
     gameGridEl.classList.remove('hidden');
 
     const isFeaturedView = currentView === 'home' && !activeCategory && !searchQuery;
     
-    // Limits for row view
+    // Use all filtered games and keep standard grid layout
     let displayGames = filteredGames;
-    if (isFeaturedView && !isGridView) {
-        displayGames = filteredGames.slice(0, 10);
-    }
 
-    // Toggle View All button
-    if (isFeaturedView && filteredGames.length > 10) {
-        viewAllBtn.classList.remove('hidden');
-        viewAllBtn.innerHTML = isGridView ? `
-            Minimize
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"></path></svg>
-        ` : `
-            View All
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
-        `;
-    } else {
-        viewAllBtn.classList.add('hidden');
-    }
+    // Hide View All button as we are showing all games in grid now
+    viewAllBtn.classList.add('hidden');
 
-    // Set Layout Class
-    gameGridEl.className = (isFeaturedView && !isGridView) ? 'game-grid-row' : 'game-grid-standard';
+    // Set Layout Class to standard grid (goes down)
+    gameGridEl.className = 'game-grid-standard';
 
     gameGridEl.innerHTML = displayGames.map(game => {
         const ratingInfo = calculateAverageRating(game.id);
@@ -405,6 +278,18 @@ function playGame(id) {
 
     // Update UI elements
     gameIframe.src = game.iframeUrl;
+    
+    // Set allow permissions - use custom ones if provided, otherwise default
+    const defaultAllow = "accelerometer *; autoplay *; camera *; clipboard-read *; clipboard-write *; encrypted-media *; fullscreen *; geolocation *; gyroscope *; microphone *; midi *; picture-in-picture *; web-share *";
+    gameIframe.allow = game.allow || defaultAllow;
+
+    // Set sandbox attribute if provided
+    if (game.sandbox) {
+        gameIframe.setAttribute('sandbox', game.sandbox);
+    } else {
+        gameIframe.removeAttribute('sandbox');
+    }
+
     gameTitle.textContent = game.title;
     gameDescription.textContent = game.description;
     gameCategoryTag.innerHTML = `

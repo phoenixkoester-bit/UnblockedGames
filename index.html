@@ -80,7 +80,7 @@
 
                 <!-- Categories -->
                 <div>
-                    <h3 class="px-3 text-[10px] font-mono uppercase tracking-[0.2em] text-gray-600 mb-4">Categories</h3>
+                    <h3 class="px-3 text-[10px] font-mono uppercase tracking-[0.2em] text-gray-600 mb-4 tracking-widest">All Games A-Z</h3>
                     <div id="sidebar-categories" class="space-y-1">
                         <!-- Categorires injected here -->
                     </div>
@@ -106,11 +106,11 @@
                     <div id="continue-playing-section" class="mb-12 hidden">
                         <div class="flex items-center justify-between mb-6">
                             <h3 class="text-xl font-bold flex items-center gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-primary"><path d="M12 8v4l3 3"></path><circle cx="12" cy="12" r="10"></circle></svg>
+                                <div class="w-1.5 h-6 bg-brand-primary rounded-full"></div>
                                 Continue Playing
                             </h3>
                         </div>
-                        <div id="continue-playing-grid" class="flex gap-4 overflow-x-auto pb-4 scrollbar-none">
+                        <div id="continue-playing-grid" class="game-grid-row">
                             <!-- Recent games injected here -->
                         </div>
                     </div>
@@ -119,7 +119,7 @@
                     <div id="top-picks-section" class="mb-12 hidden">
                         <div class="flex items-center justify-between mb-6">
                             <h3 class="text-xl font-bold flex items-center gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-primary"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                                <div class="w-1.5 h-6 bg-brand-primary rounded-full"></div>
                                 Top Picks for You
                             </h3>
                         </div>
@@ -129,13 +129,13 @@
                     </div>
 
                     <div id="hero-section" class="mb-8">
-                        <div id="categories" class="flex gap-2 overflow-x-auto pb-4 mb-8 scrollbar-none md:hidden">
-                            <!-- Categories will be injected here (mobile only now) -->
-                        </div>
-                        <div class="flex items-end justify-between gap-4 mb-2">
+                        <div class="flex items-center justify-between mb-6">
                             <div>
-                                <h2 id="active-view-title" class="text-4xl font-bold tracking-tight">Featured games</h2>
-                                <p id="active-view-desc" class="text-gray-500">Discover your next favorite unblocked experience.</p>
+                                <h3 id="active-view-title" class="text-xl font-bold tracking-tight flex items-center gap-2">
+                                    <div class="w-1.5 h-6 bg-brand-primary rounded-full"></div>
+                                    Featured games
+                                </h3>
+                                <p id="active-view-desc" class="text-gray-500 text-xs mt-1 ml-3.5">Discover your next favorite unblocked experience.</p>
                             </div>
                             <button id="view-all-btn" class="hidden flex items-center gap-2 px-3 py-1.5 rounded-lg border border-brand-border text-[10px] font-mono uppercase tracking-[0.2em] text-gray-400 hover:text-brand-primary hover:border-brand-primary/50 transition-all">
                                 View All
@@ -146,10 +146,6 @@
 
                     <div id="game-grid" class="transition-all duration-500 mb-12">
                         <!-- Games will be injected here -->
-                    </div>
-
-                    <div id="category-rows-container" class="space-y-12 mb-12 hidden">
-                        <!-- Category rows will be injected here -->
                     </div>
 
                     <div id="no-results" class="hidden py-20 text-center">
