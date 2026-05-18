@@ -54,5 +54,21 @@
     "iframeUrl": "https://games.crazygames.com/en_US/layers-roll/index.html?v=1.357",
     "category": "Casual",
     "thumbnail": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop"
+  },
+  {
+    "id": "bridge-race",
+    "title": "Bridge Race",
+    "description": "Collect blocks of your color, build bridges, and compete against others to reach the finish line in this addictive racing game.",
+    "iframeUrl": "https://games.crazygames.com/en_US/bridge-race/index.html?v=1.357",
+    "category": "Casual",
+    "thumbnail": "https://images.unsplash.com/photo-1587654780291-39c9404d746b?q=80&w=800&auto=format&fit=crop"
+  },
+  {
+    "id": "doodle-road",
+    "title": "Doodle Road",
+    "description": "An imaginative 2D casual game where you draw paths to guide a car to the finish line, testing your creativity and strategic thinking.",
+    "iframeUrl": "https://games.crazygames.com/en_US/doodle-road/index.html?v=1.357",
+    "category": "Casual",
+    "thumbnail": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=800&auto=format&fit=crop"
   }
 ]
