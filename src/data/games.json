@@ -108,5 +108,16 @@
     "thumbnail": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800&auto=format&fit=crop",
     "rating": 4.8,
     "ratingCount": 1205
+  },
+  {
+    "id": "escape-car",
+    "title": "Escape Car",
+    "description": "Navigate through challenging obstacles and escape the pursuit in this high-intensity driving game. Test your reflexes and driving skills as you race towards freedom.",
+    "iframeUrl": "https://storage.googleapis.com/freezenova/all/2025/unity2/escape-car/pre-gg.html",
+    "category": "Action",
+    "thumbnail": "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=800&auto=format&fit=crop",
+    "rating": 4.6,
+    "ratingCount": 158,
+    "sandbox": "allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads allow-storage-access-by-user-activation"
   }
 ]
